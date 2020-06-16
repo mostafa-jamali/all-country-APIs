@@ -1,0 +1,75 @@
+body{
+    background-color: rgb(233, 233, 233);
+    overflow: hidden;
+}
+*{
+    box-sizing: border-box;
+}
+form{
+    background-color: black;
+    color: burlywood;
+}
+.top-info{
+    width: 100vw;
+}
+#info{
+    width: 500px;
+    height: 40vh;
+    background-color: rgb(50, 50, 50);
+}
+.mid{
+    width: 500px;
+    height: 40vh;
+}
+#info p{
+    margin: 0px;
+    color: white;
+}
+#info h6{
+    color: white;
+}
+#info span{
+    color: burlywood;
+}
+.cal-code-text{
+    background-color: black;
+    color: white;
+}
+#call-code{
+    font-size: 100px;
+}
+.flag-div{
+    width: calc(100% - 1000px );
+    height: 40vh;
+    background-color: white;
+    margin-right: 30px;
+}
+#flag{
+    width: 90%;
+    height: 90%;
+}
+.down-info{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.weather{
+    width: 500px;
+    height: 40vh;
+    background-color: white;
+}
+.top-weather{
+    background-color: rgb(50, 50, 50);
+    color: burlywood;
+}
+#weather p{
+    margin: 0 10px;
+}
+#weather span{
+    color: greenyellow;
+}
+
+.map{
+    width: 70%;
+    height: 40vh;
+}
