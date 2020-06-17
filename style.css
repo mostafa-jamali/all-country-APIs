@@ -69,7 +69,15 @@ form{
 #weather span{
     color: greenyellow;
 }
-
+#weather .description-weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#weather .description-weather h6{
+    color: burlywood;
+    margin-top: -20px;
+}
 .map{
     width: 70%;
     height: 40vh;

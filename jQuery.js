@@ -37,22 +37,19 @@ $(document).ready(function () {
                 "url": `https://api.openweathermap.org/data/2.5/onecall?lat=${response1.latlng[0]}&lon=${response1.latlng[1]}&
                 exclude=hourly,daily&appid=dcd9e3cbf11893c4270a725d3035ddae`,
                 "method": "GET"
-            }).done(function (response2) {                                
-                $("#weather").html(` 
+            }).done(function (response2) {     
+                console.log(response2);
+                                           
+                $("#weather").html(`
+                <div class="description-weather">
+                    <img src = "http://openweathermap.org/img/wn/${response2.current.weather[0].icon}@2x.png"></img>
+                    <h6>${response2.current.weather[0].description}</h6>
+                </div>
                 <P>Wind Speed: <span>${response2.current.wind_speed}</span> MS</p>
                 <P>Temperature: <span>${Math.floor(response2.current.temp - 273)} </span> C</p>
                 <P>Humidity: <span>${response2.current.humidity}</span> %</p>
                 <P>Visibility: <span>${response2.current.visibility}</span> m</p>
-                <P>weather: <span>${response2.current.weather[0].description}</span></p>
                 `);
-                // $.ajax({
-                //     "url": ` http://openweathermap.org/img/wn/${response2.weather[0].id}@2x.png`,  /*https://openweathermap.org/weather-conditions*/
-                //     "method": "GET"
-                // }).done(function (response3) {
-                //     $("#weather").append(`
-                //     <div>${response3}</div>
-                //     `)
-                // });
             });
 
     // ............................... map API  .............................
