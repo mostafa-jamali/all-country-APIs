@@ -37,7 +37,7 @@ $(document).ready(function () {
                 "url": `https://api.openweathermap.org/data/2.5/onecall?lat=${response1.latlng[0]}&lon=${response1.latlng[1]}&
                 exclude=hourly,daily&appid=dcd9e3cbf11893c4270a725d3035ddae`,
                 "method": "GET"
-            }).done(function (response2) {
+            }).done(function (response2) {                                
                 $("#weather").html(` 
                 <P>Wind Speed: <span>${response2.current.wind_speed}</span> MS</p>
                 <P>Temperature: <span>${Math.floor(response2.current.temp - 273)} </span> C</p>
@@ -54,16 +54,27 @@ $(document).ready(function () {
                 //     `)
                 // });
             });
-            $.ajax({
-                "url": `https://maps.googleapis.com/maps/api/js?key=dcd9e3cbf11893c4270a725d3035ddae&callback=initMap&libraries=&v=weekly`,
-                "method": "GET"
-            }).done(function (response4) {
-                $("#map").html(` 
-                <div>${response4}</div>
-                `);
+
+    // ............................... map API  .............................
+            let app = new Mapp({
+                element: '#map',
+                presets: {
+                  latlng: {
+                    lat: `${response1.latlng[0]}`,
+                    lng: `${response1.latlng[1]}`,
+                  },
+                  zoom: 6
+                },
+                apiKey: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImUwYzM3MDdhYjYwNDVjNmU5MGVjOTVmZWI2Y2RiMjhkZTM2ZGNiNDE4M2VmOWUwNGMyYzdhY2VhODQwNGUzOGFkOTJiMjg5NWM5MjllZmUzIn0.eyJhdWQiOiI5NzE1IiwianRpIjoiZTBjMzcwN2FiNjA0NWM2ZTkwZWM5NWZlYjZjZGIyOGRlMzZkY2I0MTgzZWY5ZTA0YzJjN2FjZWE4NDA0ZTM4YWQ5MmIyODk1YzkyOWVmZTMiLCJpYXQiOjE1OTIzMzIxMjMsIm5iZiI6MTU5MjMzMjEyMywiZXhwIjoxNTk0OTI0MTIzLCJzdWIiOiIiLCJzY29wZXMiOlsiYmFzaWMiXX0.MXJaR4IyMsk5c9UYpWKpS7OhKfM7VR-U7fUD8I3KHpx81_RqcqBMeWmYlmOyVgCzf35rE4Z2cMV3uFwJywWdyyXN_48xVKiZgf2nO0KBLzFGH8IrxlZZhQphCJQjK0NZw1C2ZoAjbL5v-Opabx_VKknCogRySuaFBtskGj28uCbsnjeNEYw7U_AudYXk6JnrGKAX1rrZPy732NCK-CyOZBfCS7nJKvym5_OR-Cwg6f582M7tA6nB7aMr8VKaLGKbjuTNVTaU6B_W0lehJ7G28xjYF_TXScEtPdMCOwN76t2S776aXi3szQ0Fx1Aun8sibN7Bs0ZtX_NuE5Wn-H5HZg'
             });
+            app.addLayers();
+            // app.addMarker({
+            //     latlng: {
+            //         lat: `${response1.latlng[0]}`,
+            //         lng: `${response1.latlng[1]}`,
+            //     },
+            // });
+            app.addZoomControls()
         });
-
-
-    })
+    });      
 });

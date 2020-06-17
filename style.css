@@ -1,3 +1,4 @@
+@charset "utf-8";
 body{
     background-color: rgb(233, 233, 233);
     overflow: hidden;
@@ -72,4 +73,5 @@ form{
 .map{
     width: 70%;
     height: 40vh;
+    background-color: white;
 }

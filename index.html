@@ -10,8 +10,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="./style.css">
-
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="//support.map.ir/wp-content/cache/wpfc-minified/10lzf1tf/a1nu0.css"
+        media="all" />
 </head>
 
 <body>
@@ -44,24 +45,25 @@
                     </div>
                     <div id="weather"></div>
                 </div>
-                <div class="ml-2 mt-2 p-3 bg-danger map" id="map"></div>
+                <div class="ml-2 mt-2 p-3 map" id="map"></div>
             </div>
         </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="./jquery-3.5.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-        <script src="./jquery-3.5.1.js"></script>
-    <script src="./index.js"></script>
-        <script src="./jQuery.js"></script>
+ <!-- .................. map API ............. -->
+    <script type="text/javascript" src="./mapp.env.js"></script>
+    <!-- OR => <script type="text/javascript" src="https://support.map.ir/wp-content/plugins/mapp-web-sdk/libs/mapp/dist/js/mapp.min.js"></script> -->
+    <script type="text/javascript" src="./mapp.min.js"></script>
+    <!-- OR => <script type="text/javascript" src="https://support.map.ir/wp-content/plugins/mapp-web-sdk/libs/mapp/dist/js/mapp.env.js"></script> -->
+    <script src="./jQuery.js"></script>
 </body>
 
 </html>
